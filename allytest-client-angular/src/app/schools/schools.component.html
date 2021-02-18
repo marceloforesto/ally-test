@@ -1,0 +1,22 @@
+<div>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let school of schools">
+                <td>{{ school.id }}</td>
+                <td>{{ school.name }}</td>
+                <td>{{ school.city }}</td>
+                <td>
+                    <button class="button is-primary"  (click)="deleteSchool(school.id)">Delete School</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <app-school-form (schoolAdded)="appendSchool($event)"></app-school-form>
+</div>

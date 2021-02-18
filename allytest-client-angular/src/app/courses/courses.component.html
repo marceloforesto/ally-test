@@ -1,0 +1,26 @@
+<div>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>School</th>
+                <th>Description</th>
+                <th>Start Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses">
+                <td>{{ course.id }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.school }}</td>
+                <td>{{ course.description }}</td>
+                <td>{{ course.startDate }}</td>
+                <td>
+                    <button class="button is-primary" (click)="deleteCourse(course.id)">Delete Course</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <app-course-form (courseAdded)="appendCourse($event)"></app-course-form>
+</div>
