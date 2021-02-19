@@ -1,6 +1,22 @@
-# ALly-test
+# Ally-test
 
 Repository for testing the jr developer position at Startup Ally.
+
+## The project
+
+There are two parts to this project:
+
+- Fullstack CRUD development using Larvel and Angular.
+
+- Backend Currencies Conversion
+
+### Notes: 
+
+- For the development of the currency conversion system, the Python language was used in backend.
+To get access, use the GET method in:
+```
+http://127.0.0.1:8000/api/task2
+```
 
 ### Technologies used
 - Python
