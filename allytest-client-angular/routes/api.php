@@ -24,3 +24,5 @@ Route::get('/courses/{id}', 'App\Http\Controllers\CourseController@show');
 Route::post('/courses', 'App\Http\Controllers\CourseController@store');
 Route::delete('/courses/{id}', 'App\Http\Controllers\CourseController@delete');
 Route::put('/courses', 'App\Http\Controllers\CoursesController@update');
+
+Route::get('/task2', 'App\Http\Controllers\Task2Controller@index');

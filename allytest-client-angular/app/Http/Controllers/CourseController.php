@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Course;
+use Illuminate\Http\Request;
 use App\Http\Resources\Course as CourseResource;
 use App\Http\Resources\CourseCollection;
 
