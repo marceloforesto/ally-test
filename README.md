@@ -46,6 +46,6 @@ npm install
 ng serve --open
 ```
 
-#TODO
+### TODO
 - Fix Angular communication with backend
 - Fix Heroku Forbidden message
