@@ -46,6 +46,9 @@ npm install
 ng serve --open
 ```
 
+### Pics
+- Look in the pictures folder
 ### TODO
 - Fix Angular communication with backend
 - Fix Heroku Forbidden message
+- Make more refined tables, using a foreign key in the school field.
