@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule  } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { OktaAuthModule, OktaCallbackComponent } from '@okta/okta-angular';
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule ,
     RouterModule.forRoot(routes),
     OktaAuthModule.initAuth(oktaConfig)
   ],

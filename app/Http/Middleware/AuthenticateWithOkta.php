@@ -15,19 +15,17 @@ class AuthenticateWithOkta
      */
     public function handle($request, Closure $next)
     {
-        if ($this->isAuthorized($request)) {
+       
+       if ($this->isAuthorized($request)) {
             return $next($request);
         } else {
             return response('Unauthorized.', 401);
         }
+        
     }
 
     public function isAuthorized($request)
     {
-        if (! $request->header('Authorization')) {
-            return false;
-        }
-
         $authType = null;
         $authData = null;
 
@@ -41,10 +39,10 @@ class AuthenticateWithOkta
 
         // Attempt authorization with the provided token
         try {
-
             // Setup the JWT Verifier
             $jwtVerifier = (new \Okta\JwtVerifier\JwtVerifierBuilder())
-                            ->setAdaptor(new \Okta\JwtVerifier\Adaptors\SpomkyLabsJose())
+                            ->setDiscovery(new \Okta\JwtVerifier\Discovery\Oauth) // This is not needed if using oauth.  The other option is `new \Okta\JwtVerifier\Discovery\OIDC`
+                            ->setAdaptor(new \Okta\JwtVerifier\Adaptors\FirebasePhpJwt)
                             ->setAudience('api://default')
                             ->setClientId('0oa6obtcn0kD8GwMF5d6')
                             ->setIssuer('https://dev-93009660.okta.com')
